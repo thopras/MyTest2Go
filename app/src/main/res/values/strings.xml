@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">MyTest2Go</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="btn_send_label">Senden</string>
+    <string name="hintPosition">Position eingeben</string>
+    <string name="lblPosition">Position</string>
+
+
+</resources>
