@@ -70,7 +70,7 @@ public class MyConnectActivity extends ActionBarActivity {
         String posText = editPosition.getText().toString();
 
         // get request queue and send request
-        String url ="http://localhost:8090/test/testservice.php";
+        String url ="http://192.168.43.100:8090/test/testservice.php";
 
         // Request a string response from the provided URL.
         StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
@@ -83,7 +83,8 @@ public class MyConnectActivity extends ActionBarActivity {
                 }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                txtRespondMsg.setText("That didn't work!");
+                String errormsg = "That didn't work!" + error.getMessage() + error.getStackTrace() + error.getCause();
+                txtRespondMsg.setText(errormsg);
             }
         });
 
