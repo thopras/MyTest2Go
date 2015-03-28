@@ -89,6 +89,10 @@ public class MyConnectActivity extends ActionBarActivity {
 
     }
 
+    public void onSendClick(View view) {
+        sendMessage_String(view);
+    }
+
     /**
      * send message button clicked
      * @param view
@@ -99,7 +103,8 @@ public class MyConnectActivity extends ActionBarActivity {
         EditText editPosition = (EditText) findViewById(R.id.editPosition);
         final TextView txtRespondMsg = (TextView) findViewById(R.id.txtRespondMsg);
 
-        txtRespondMsg.setText("send request...");
+        txtRespondMsg.setText("sending request...");
+        txtRespondMsg.setBackgroundResource(R.color.inProgressState);
 
         String posText = editPosition.getText().toString();
 
@@ -142,6 +147,7 @@ public class MyConnectActivity extends ActionBarActivity {
             } else {
                 txtRespondMsg.setText("response is null");
             }
+            txtRespondMsg.setBackgroundResource(R.color.readyState);
 
         } catch (Exception e) {
             if (BuildConfig.DEBUG) {
